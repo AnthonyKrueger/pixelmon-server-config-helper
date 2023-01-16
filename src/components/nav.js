@@ -16,15 +16,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import PaidIcon from '@mui/icons-material/Paid';
+import StoreIcon from '@mui/icons-material/Store';
 
 import { Outlet, Link } from "react-router-dom";
 
 const drawerWidth = 200;
-
-const fs = window.require('fs')
-const pathModule = window.require('path')
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -91,12 +88,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const { app } = window.require("@electron/remote")
-
-
 function Nav() {
-
-  const [path, setPath] = React.useState(app.getAppPath())
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -156,7 +148,7 @@ function Nav() {
                     justifyContent: 'center',
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? <PaidIcon /> : <StoreIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
