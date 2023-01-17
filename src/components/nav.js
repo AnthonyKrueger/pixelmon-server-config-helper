@@ -132,8 +132,8 @@ function Nav() {
         <Divider />
         <List>
           {['Prices', 'Shopkeepers'].map((text, index) => (
-            <Link to={index % 2 === 0 ? "/prices" : "/shopkeepers"}>
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+            <Link key={text} to={index % 2 === 0 ? "/prices" : "/shopkeepers"}>
+            <ListItem disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,

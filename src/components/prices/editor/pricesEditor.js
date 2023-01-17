@@ -2,11 +2,15 @@ import { Box } from "@mui/system";
 import PricesEditorToolbar from "./editorToolbar";
 import PricesEditorList from "./pricesList";
 
-const PricesEditor = () => {
+const list = [1, 2, 3, 4]
+
+const PricesEditor = (pricesList) => {
     return (
-    <Box>
-        <PricesEditorToolbar />
-        <PricesEditorList />
+    <Box sx={{
+      
+    }}>
+        <PricesEditorToolbar pricesList={pricesList}/>
+        <PricesEditorList pricesList={pricesList} />
     </Box>
     );
   };

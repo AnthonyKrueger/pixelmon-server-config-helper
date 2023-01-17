@@ -3,9 +3,7 @@ import { Box } from "@mui/system";
 import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from '@mui/icons-material/Save';
 
-const itemList = ["item1", "item2"]
-
-const PricesEditorToolbar = () => {
+const PricesEditorToolbar = (pricesList) => {
     return (
     <Box
       sx={{
@@ -24,7 +22,7 @@ const PricesEditorToolbar = () => {
         }}
         id="item-search"
         freeSolo
-        options={itemList.map((option) => option)}
+        options={pricesList.pricesList.pricesList ? pricesList.pricesList.pricesList.items.map((option) => option.id ? option.id : option.name) : []}
         renderInput={(params) => <TextField {...params} label="Item Search" />}
       />
       <Box sx={{
